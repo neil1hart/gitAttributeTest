@@ -1,0 +1,6 @@
+## Make mac/unix the winners and windows the losers
+
+#always start with the global setting
+*       text=auto
+
+*.txt        text eol=lf
