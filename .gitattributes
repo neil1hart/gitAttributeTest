@@ -1,6 +1,41 @@
 ## Make mac/unix the winners and windows the losers
+# shoulders
+# https://github.com/LibreTime/libretime/issues/141
+# https://stackoverflow.com/questions/46590142/what-is-the-differrence-between-text-auto-and-text-eol-lf-in-gitattribu
+# https://github.com/hawk/lux/blob/master/.gitattributes
+# https://github.com/alexkaratarakis/gitattributes/blob/master/Drupal.gitattributes
+
+# blank-at-eol, which looks for spaces at the end of a line;
+# blank-at-eof, which notices blank lines at the end of a file;
+# space-before-tab, which looks for spaces before tabs at the beginning of a line.
+# indent-with-non-tab, which looks for lines that begin with spaces instead of tabs (and is controlled by the tabwidth option);
+# tab-in-indent, which watches for tabs in the indentation portion of a line;
+# cr-at-eol, which tells Git that carriage returns at the end of lines are OK.
+
+#MACRO ATTRIBUTES reduce verbosity
+[attr]code text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=2
+
+# Check settings
+# git ls-files |git check-attr --stdin -a
+
+# not applied to git ignored files
+
+
+
 
 #always start with the global setting
-*       text=auto
+*  text=auto
 
-*.txt        text eol=lf
+.gitattributes export-ignore
+.gitignore export-ignore
+README.adoc export-ignore
+
+# text
+*.txt code
+*.java code diff=java
+*.adoc code
+
+
+# binary
+*.png binary -whitespace
+*.jpg binary -whitespace
