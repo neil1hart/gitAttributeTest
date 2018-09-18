@@ -13,7 +13,7 @@
 # cr-at-eol, which tells Git that carriage returns at the end of lines are OK.
 
 #MACRO ATTRIBUTES reduce verbosity
-[attr]code text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=2
+# [attr]code text eol=lf whitespace=blank-at-eol,-blank-at-eof,space-before-tab,tab-in-indent,tabwidth=2
 
 # Check settings
 # git ls-files |git check-attr --stdin -a
@@ -26,12 +26,12 @@
 #always start with the global setting
 *  text=auto
 
-.gitattributes export-ignore
-.gitignore export-ignore
-README.adoc export-ignore
+# .gitattributes export-ignore
+# .gitignore export-ignore
+# README.adoc export-ignore
 
 # text
-*.txt code
+*.txt text eol=lf
 *.java code diff=java
 *.adoc code
 
